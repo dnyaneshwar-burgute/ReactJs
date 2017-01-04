@@ -24,13 +24,22 @@ export default class App extends React.Component {
             <div>
                 <h1>React ToDos App</h1>
                 <CreateTodo createTask = {this.createTask.bind(this)}/>
-                <TodoList todos = { this.state.todos } toggleTask = {this.toggleTask.bind(this)}/>
+                <TodoList todos = { this.state.todos }
+                  toggleTask = {this.toggleTask.bind(this)}
+                  saveTask = {this.saveTask.bind(this)}
+                />
             </div>
         );
     }
 
+    saveTask(oldTask, newTask){
+      const foundTask = _.find(this.state.todos, todo => todo.task === oldTask);
+      foundTask.task = newTask;
+      this.setState({todos: this.state.todos})
+    }
+
     toggleTask(task){
-      const foundTask = _.find(this.state.todos, todo => todo.task == task);
+      const foundTask = _.find(this.state.todos, todo => todo.task === task);
       foundTask.isCompleted = !foundTask.isCompleted;
       this.setState({todos: this.state.todos });
     }
