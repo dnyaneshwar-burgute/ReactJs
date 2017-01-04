@@ -27,9 +27,15 @@ export default class App extends React.Component {
                 <TodoList todos = { this.state.todos }
                   toggleTask = {this.toggleTask.bind(this)}
                   saveTask = {this.saveTask.bind(this)}
+                  deleteTask = {this.deleteTask.bind(this)}
                 />
             </div>
         );
+    }
+
+    deleteTask(task){
+      _.remove(this.state.todos, todo => todo.task === task);
+      this.setState({todos: this.state.todos});
     }
 
     saveTask(oldTask, newTask){
