@@ -29,59 +29,46 @@
 
   </head>
   <body>
-    <div class='render-target'></div>
-    <script>
-      var gameState = {
-        PLAYER_ONE_SYMBOL: 'x',
-        PLAYER_TWO_SYMBOL: 'o',
-        currentTurn: 'x',
-        board: [
-          "", "", "", "", "", "", "", "", ""
-        ]
-      }
+    <div class='board'>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+    </div>
+  </body>
+  <script>
+      var PLAYER_ONE_SYMBOL = 'x'
+      var PLAYER_TWO_SYMBOL = 'o'
+      var currentTurn = PLAYER_ONE_SYMBOL
 
-      function render(state){
-        return document.querySelector('.render-target').innerHTML = "<div class='board'>" +
-        "<div class='square' data-square-id='0'>"+ state.board[0] +"</div>"+
-        "<div class='square' data-square-id='1'>"+ state.board[1] +"</div>"+
-        "<div class='square' data-square-id='2'>"+ state.board[2] +"</div>"+
-        "<div class='square' data-square-id='3'>"+ state.board[3] +"</div>"+
-        "<div class='square' data-square-id='4'>"+ state.board[4] +"</div>"+
-        "<div class='square' data-square-id='5'>"+ state.board[5] +"</div>"+
-        "<div class='square' data-square-id='6'>"+ state.board[6] +"</div>"+
-        "<div class='square' data-square-id='7'>"+ state.board[7] +"</div>"+
-        "<div class='square' data-square-id='8'>"+ state.board[8] +"</div>"+
-        "</div>"
-      }
-
-      render(gameState)
       var board = document.querySelector('.board');
       board.addEventListener('click', function(e){
-        var squaresIndex = parseInt(e.target.dataset['squareId'], 10)
-        gameState.board[squaresIndex] = gameState.currentTurn
-        gameState.currentTurn = gameState.currentTurn === gameState.PLAYER_ONE_SYMBOL ? gameState.PLAYER_TWO_SYMBOL : gameState.PLAYER_ONE_SYMBOL
-        // if (checkForWinner()){
-        //   alert('Hey!!! Won someone');
-        // }
-        render(gameState)
+        e.target.innerHTML = currentTurn
+        currentTurn = currentTurn === PLAYER_ONE_SYMBOL ? PLAYER_TWO_SYMBOL : PLAYER_ONE_SYMBOL
+        if (checkForWinner()){
+          alert('Hey!!! Won someone');
+        }
       });
 
-      // function checkForWinner(){
-      //   var squares = Array.prototype.slice.call(document.querySelectorAll('.square'))
-      //   var symbols = squares.map(function(square){
-      //     return square.innerHTML
-      //   })
+      function checkForWinner(){
+        var squares = Array.prototype.slice.call(document.querySelectorAll('.square'))
+        var symbols = squares.map(function(square){
+          return square.innerHTML
+        })
 
-      //   var winningCombos = [[0,1,2], [3,4,5], [6,7,8],[0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
-      //   return winningCombos.find(function(combo){
-      //     if(symbols[combo[0]] === symbols[combo[1]] && symbols[combo[1]] === symbols[combo[2]]){
-      //       return symbols[combo[0]]
-      //     }else{
-      //       return false
-      //     }
-      //   });
-      // }
+        var winningCombos = [[0,1,2], [3,4,5], [6,7,8],[0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
+        return winningCombos.find(function(combo){
+          if(symbols[combo[0]] === symbols[combo[1]] && symbols[combo[1]] === symbols[combo[2]]){
+            return symbols[combo[0]]
+          }else{
+            return false
+          }
+        });
+      }
     </script>
-  </body>
-
 </html>
