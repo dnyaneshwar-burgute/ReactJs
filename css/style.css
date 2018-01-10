@@ -1,0 +1,35 @@
+.container {
+  width:50%;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding:5px;
+}
+
+.container
+  .header {
+    text-align: center;
+  }
+
+.centered {
+  align-content: center;
+  background-color: #e6ffe6;
+}
+
+input, textarea, select, button, label {
+  width : 200px;
+  margin: 2px;
+  display: block;
+  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+     -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+          box-sizing: border-box;
+}
+
+.comment {
+  background-color: #e6ffe6;
+  padding: 5px;
+  margin: 5px;
+}
