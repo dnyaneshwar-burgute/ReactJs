@@ -70,9 +70,9 @@ class CommentBox extends Component {
             displayText = 'Hide Comments';
       }
       return (
-         <div>
+         <div className='comment-box'>
             <CommentForm addComment={this._addComment.bind(this)}/><br/>
-            <button onClick={this._toggleComments.bind(this)}>{displayText}</button>
+            <button className='button-toggle' onClick={this._toggleComments.bind(this)}>{displayText}</button>
             {commentNodes}
          </div>
       );

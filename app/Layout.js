@@ -9,7 +9,8 @@ class Layout extends React.Component {
   render(){
     return(
       <div className='container'>
-        <CommentBox/>
+        <Header/>
+        {this.props.children}
       </div>
     );
   }

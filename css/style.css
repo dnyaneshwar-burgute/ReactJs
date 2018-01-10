@@ -9,27 +9,171 @@
   padding:5px;
 }
 
-.container
-  .header {
-    text-align: center;
-  }
-
-.centered {
-  align-content: center;
-  background-color: #e6ffe6;
+.header {
+  text-align: center;
+  background: #E0FFFF;
+  padding: 1px;
 }
 
-input, textarea, select, button, label {
+ul {
+  margin-left: -45px;
+}
+
+ul li {
+  display: inline;
+  margin: 5px;
+}
+
+/*input, textarea, select, button, label {
   width : 200px;
   margin: 2px;
   display: block;
   -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
-     -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
-          box-sizing: border-box;
+     /*-moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+          /*box-sizing: border-box;*/
+
+.comment-box {
+  padding: 5px;
+  display: block;
+  vertical-align: middle;
 }
 
-.comment {
-  background-color: #e6ffe6;
+.comment-form {
+  display: block;
+  text-align: -webkit-center;
   padding: 5px;
+}
+
+.comment{
+  background-color: #e6ffe6;
+  padding: 15px 5px 5px 5px;
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.button-toggle {
+  background-color: #EB3B88;
+  float: right;
+  font-size: inherit;
+  padding: 5px;
+}
+
+.comment img {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+
+.comment-header {
+  font-weight: bold;
+  margin: 10px;
+}
+
+.comment-body{
   margin: 5px;
 }
+
+.comment-actions {
+  display: inline;
+  float: right;
+  padding: 5px;
+  margin-top: -25px;
+}
+
+<style type="text/css">
+form{
+    max-width: 450px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+form label{
+    display:block;
+    margin-bottom: 10px;
+}
+form label > span{
+    float: left;
+    width: 100px;
+    color: #F072A9;
+    font-weight: bold;
+    font-size: 13px;
+    text-shadow: 1px 1px 1px #fff;
+}
+form fieldset{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin: 0px 0px 10px 0px;
+    border: 1px solid #FFD2D2;
+    padding: 20px;
+    background: #FFF4F4;
+    box-shadow: inset 0px 0px 15px #FFE5E5;
+    -moz-box-shadow: inset 0px 0px 15px #FFE5E5;
+    -webkit-box-shadow: inset 0px 0px 15px #FFE5E5;
+}
+form fieldset legend{
+    color: #FFA0C9;
+    border-top: 1px solid #FFD2D2;
+    border-left: 1px solid #FFD2D2;
+    border-right: 1px solid #FFD2D2;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    background: #FFF4F4;
+    padding: 0px 8px 3px 8px;
+    box-shadow: -0px -1px 2px #F1F1F1;
+    -moz-box-shadow:-0px -1px 2px #F1F1F1;
+    -webkit-box-shadow:-0px -1px 2px #F1F1F1;
+    font-weight: normal;
+    font-size: 12px;
+}
+form textarea{
+    width:250px;
+    height:100px;
+}
+form input[type=text],
+form input[type=date],
+form input[type=datetime],
+form input[type=number],
+form input[type=search],
+form input[type=time],
+form input[type=url],
+form input[type=email],
+form select,
+form textarea{
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border: 1px solid #FFC2DC;
+    outline: none;
+    color: #F072A9;
+    padding: 5px 8px 5px 8px;
+    box-shadow: inset 1px 1px 4px #FFD5E7;
+    -moz-box-shadow: inset 1px 1px 4px #FFD5E7;
+    -webkit-box-shadow: inset 1px 1px 4px #FFD5E7;
+    background: #FFEFF6;
+    width:50%;
+}
+form  input[type=submit],
+form  input[type=button]{
+    background: #EB3B88;
+    border: 1px solid #C94A81;
+    padding: 5px 15px 5px 15px;
+    color: #FFCBE2;
+    box-shadow: inset -1px -1px 3px #FF62A7;
+    -moz-box-shadow: inset -1px -1px 3px #FF62A7;
+    -webkit-box-shadow: inset -1px -1px 3px #FF62A7;
+    border-radius: 3px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    font-weight: bold;
+}
+.required {
+    color:red;
+    font-weight:normal;
+}
+.char-count {
+  color:green;
+  font-weight:normal;
+  margin-left: -135px;
+}
+</style>

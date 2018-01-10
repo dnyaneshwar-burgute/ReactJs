@@ -22,7 +22,6 @@ class Comment extends React.Component {
         <div className="comment-actions">
           <CommentConfirmation onDelete={this.handleDelete.bind(this)}>Delete Comment? </CommentConfirmation>
         </div>
-
       </div>
     );
   }

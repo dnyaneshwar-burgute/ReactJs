@@ -9,15 +9,15 @@ class CommentForm extends React.Component {
   }
   render(){
     return(
-      <div>
+      <div className='comment-form'>
         <form onSubmit={this._handleComment.bind(this)}>
-          <label>Author Name: </label>
-          <input type='text' ref={(input) => this._author = input}/>
-          <label>Comment Body: </label>
-          <textarea onChange={this._countCharacter.bind(this)} ref={(body) => this._body = body}></textarea>
-          {`${this.state.characters} characters`}
-          <input type="submit" value='Comment'/>
-        </form>
+        <fieldset><legend>CommentForm</legend>
+          <label for="author"><span>Author Name <span class="required">*</span></span><input type="text" class="input-field" name='author' ref={(input) => this._author = input} /></label>
+          <label for="body"><span>Message <span class="required">*</span></span><textarea name="body" class="textarea-field" onChange={this._countCharacter.bind(this)} ref={(body) => this._body = body}></textarea></label>
+          <span className='char-count'>{this.state.characters} characters</span>
+          <label><span>&nbsp;</span><input type="submit" value="Comment" /></label>
+        </fieldset>
+      </form>
       </div>
     );
   }
