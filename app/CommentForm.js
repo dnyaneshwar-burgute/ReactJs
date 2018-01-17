@@ -12,8 +12,8 @@ class CommentForm extends React.Component {
       <div className='comment-form'>
         <form onSubmit={this._handleComment.bind(this)}>
         <fieldset><legend>CommentForm</legend>
-          <label for="author"><span>Author Name <span class="required">*</span></span><input type="text" class="input-field" name='author' ref={(input) => this._author = input} /></label>
-          <label for="body"><span>Message <span class="required">*</span></span><textarea name="body" class="textarea-field" onChange={this._countCharacter.bind(this)} ref={(body) => this._body = body}></textarea></label>
+          <label htmlFor="author"><span>Author Name <span className="required">*</span></span><input type="text" className="input-field" name='author' ref={(input) => this._author = input} /></label>
+          <label htmlFor="body"><span>Message <span className="required">*</span></span><textarea name="body" className="textarea-field" onChange={this._countCharacter.bind(this)} ref={(body) => this._body = body}></textarea></label>
           <span className='char-count'>{this.state.characters} characters</span>
           <label><span>&nbsp;</span><input type="submit" value="Comment" /></label>
         </fieldset>

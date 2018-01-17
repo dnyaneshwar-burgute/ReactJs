@@ -80,6 +80,23 @@ ul li {
   margin-top: -25px;
 }
 
+.blog-header {
+  text-align: center;
+  padding: 1px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+p {
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.5;
+  text-indent: 50px;
+}
+
+.blog {
+  background: antiquewhite;
+  padding: 15px;
+}
+
 <style type="text/css">
 form{
     max-width: 450px;

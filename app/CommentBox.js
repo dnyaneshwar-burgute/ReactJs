@@ -4,7 +4,7 @@ import CommentForm from './CommentForm';
 class CommentBox extends Component {
    constructor(props){
       super(props);
-      this.state = {showComment: false,
+      this.state = {showComment: true,
          comments: [{
          id: 1,
          author: 'Dnyaneshwar',
